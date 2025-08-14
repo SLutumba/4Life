@@ -1,0 +1,150 @@
+/* Reset + Layout */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lexend', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  overflow: hidden;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #f9f9f9;
+  font-family: 'Delius Swash Caps', sans-serif;
+  text-align: center;
+}
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: rgb(52, 159, 231);
+  font-family: 'delius swash caps', sans-serif;
+}
+p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+/* Background container */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+}
+
+#bg-video iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* Overscale so sides are always covered */
+  width: 120%;
+  height: 120%;
+  transform: translate(-50%, -50%);
+  filter: blur(10px) brightness(0.8) contrast(115%);
+  pointer-events: none;
+}
+
+
+
+#hintBox {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  font-weight: bold;
+  color: rgb(52, 159, 231);
+}
+
+input {
+  padding: 0.7rem;
+  width: 80%;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #f9f9f9;
+}
+input:focus {
+  outline: none;
+  animation: pulseRed 2s infinite ease-in-out;
+}
+input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+button {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(52, 159, 231, 0.6);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition:  0.3s;
+}
+.desc-text{
+    width: 450px;
+    font-size: 1.1rem;
+    text-align: justify;
+    font-family: 'Twinkle Star';
+}
+button:hover {
+  background-color: rgba(52, 159, 231);
+}
+
+#result {
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.container {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out 1s forwards;
+}
+header{
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out 0s forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes pulseRed {
+  0% {
+    box-shadow: 0 0 10px rgb(52, 159, 231, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 15px rgb(52, 159, 231, 1);
+  }
+  100% {
+    box-shadow: 0 0 10px rgb(52, 159, 231, 0.6);
+  }
+}
+

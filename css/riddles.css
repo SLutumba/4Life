@@ -1,0 +1,200 @@
+* {
+      box-sizing: border-box;
+      margin: 0px;
+      padding: 0px;
+      
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      font-family: 'delius swash caps', cursive;
+      font-size: 1.25rem;
+    }
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+}
+
+#bg-video iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%; /* overscale so no black bars */
+  height: 120%;
+  transform: translate(-50%, -50%);
+  filter: blur(5px) brightness(0.75) contrast(150%);
+  pointer-events: none;
+}
+    body {
+      margin: 0;
+      font-family: 'Lexend', sans-serif;
+      background: #0b0c2a;
+      color: #f1f1f1;
+      line-height: 1.6;
+      padding: 40px 20px;
+      overflow-y: auto; /* Enable vertical scroll */
+
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 110px;
+      border: 1px white solid;
+      border-radius: 25px;
+      padding: 2rem;
+      backdrop-filter: blur(30px);
+
+    }
+
+    .poem, .riddles {
+      flex: 1 1 45%;
+      min-width: 320px;
+    }
+
+    .poem p {
+      margin-bottom: 0.2rem;
+      font-size: 18px;
+    }
+
+    .highlight {
+      color: #4bf1ff;
+      font-weight: bold;
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+ 
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #4bf1ff; }
+      to   { text-shadow: 0 0 20px #4bf1ff; }
+    }
+
+    .riddle-block {
+      padding: 0.5rem;
+      margin-bottom: 25px;
+    }
+
+    input {
+      margin-top: 0.5rem;
+      padding: 8px;
+      border-radius: 4px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      background-color: transparent;
+      border: 1px solid white;
+      color: #f1f1f1;
+    }
+
+    input.correct {
+      border: 2px solid #4bf1ff;
+      background: #4bf0ff4d;
+      color: #4bf1ff;
+    }
+    button{
+      background-color:transparent;
+      background: linear-gradient(135deg, #004c7021, #62c0e96e);
+      border: 1px solid #004c70;
+      border-radius: 250px;
+      position: fixed;
+      top: 45%;
+      padding: 0.4rem;
+      left: 6%;
+      backdrop-filter: blur(7px);
+    }
+    button:hover {
+      cursor: pointer;
+    }
+    button svg {
+      width: 60px;
+      height: 60px;
+    }
+
+    button {
+  background-color: transparent;
+  background: linear-gradient(135deg, #004c7021, #62c0e96e);
+  border: 1px solid #004c70;
+  border-radius: 25px;
+  position: fixed;
+  top: 45%;
+  padding: 0px;
+  left: 4%;
+  backdrop-filter: blur(7px);
+  position: relative; /* needed for tooltip positioning */
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+/* Tooltip */
+button::after {
+  content: "Back to games";
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+button:hover::after {
+  opacity: 1;
+}
+
+button svg {
+  width: 60px;
+  height: 60px;
+}
+/* Glow effect for container */
+.container.glow {
+  animation: pulseGlow 1.5s infinite alternate;
+}
+
+@keyframes pulseGlow {
+  from { box-shadow: 0 0 15px #4bf1ff; }
+  to   { box-shadow: 0 0 40px #4bf1ff; }
+}
+
+/* Typing animation */
+.typing {
+  overflow: hidden;
+  border-right: .1rem solid #e78a88;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 6s steps(40, end) infinite, blink-caret .75s step-end infinite;
+  font-weight: bold;
+  max-width: 45%;
+  color: #e78a88;
+  text-shadow: #794544 5px 1px 10px;
+  padding: 1rem;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 60% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #e78a88; }
+}   

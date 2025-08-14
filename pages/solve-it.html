@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Moment of Truth</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/css/solve-it.css">
+</head>
+<body>
+
+<div id="bg-video">
+  <iframe 
+    src="https://player.vimeo.com/video/1109931591?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0" 
+    frameborder="0" 
+    allow="autoplay; fullscreen; picture-in-picture" 
+    referrerpolicy="strict-origin-when-cross-origin">
+  </iframe>
+</div>
+
+<div class="container" id="gameContainer">
+    <h1>It all comes together here!</h1>
+    <aside>Remember the codes? Enter them in order to reveal the puzzle.</aside>
+
+    <p id="puzzle">
+        <span id="word1" class="placeholder">____</span>
+        <span id="word2" class="placeholder">___</span>
+        <span id="word3" class="placeholder">__</span>
+        <span id="word4" class="placeholder">__</span>
+        <span id="word5" class="placeholder" style="display:none;">_________</span>
+    </p>
+
+    <input type="number" id="codeInput" placeholder="Enter code..." autofocus />
+</div>
+
+<div id="finalMessage">💖 Will you be my girlfriend? 💖</div>
+<div id="responseButtons" style="display:none;">
+  <a href="finalpage.html"><button id="yesBtn" class="responseBtn">Yes</button></a>
+  <button id="noBtn" class="responseBtn">No</button>
+</div>
+
+<div id="noMessage" style="display:none;">
+  You really thought that was a choice??
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script src="/js/solve-it.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ready For Some Fun?</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/games.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Lexend:wght@100..900&family=Nunito+Sans:ital,opsz,wdth,wght@0,6..12,75..125,200..1000;1,6..12,75..125,200..1000&family=Twinkle+Star&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <body>
+ <div id="bg-video">
+  <iframe 
+    src="https://player.vimeo.com/video/1109931543?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0" 
+    frameborder="0" 
+    allow="autoplay; fullscreen; picture-in-picture" 
+    referrerpolicy="strict-origin-when-cross-origin">
+  </iframe>
+</div>
+
+  <div class="words-sequence">
+    <span class="word">LET</span>
+    <span class="word">THE</span>
+    <span class="word">GAMES</span>
+    <span class="word center-word">BEGIN!!!</span>
+  </div>
+
+  <div class="content hidden">
+  <h1 class="center" id="main-heading">Pick A Card</h1>
+  <div class="flex">
+    <a href="anagrams.html">
+      <div class="card scaleUp">
+        <h1 class="card-title center">Anagrams</h1>
+        <div>
+          <p class="text card-text">
+            Unscramble the mixed-up letters to find the hidden word! <br> Each one is a clue—are you sharp enough to solve them all?
+          </p>
+        </div>
+      </div>
+    </a>
+    <a href="riddles.html">
+      <div class="card scaleUp">
+        <h1 class="center card-title">Riddles</h1>
+        <div>
+          <p class="text card-text">
+            Test your wit and creativity with mind-twisting riddles! <br> Think outside the box and uncover clever answers.
+          </p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="next-page">
+  <div class="hint-wrapper">
+    <a href="solve-it.html">
+      <button class="scaleUp" id="next-page">Next Page</button>
+    </a>
+    <div id="hint-popup" class="hint-popup">Click after you finish the anagrams</div>
+  </div>
+</div>
+
+</div>
+
+<script src="/js/games.js"></script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
+body {
+    height: 100vh;
+    background-image: url('https://pub-1b3342e1772547478bde3603aaadb38f.r2.dev/Untitled design.png');
+    backdrop-filter: blur(5px);
+    background-size: cover;
+    color: aliceblue;
+    font-family: 'Lexend', sans-serif;
+}
+
+/* Typography */
+h1 {
+    font: 6.5rem 'Twinkle Star', sans-serif;
+    letter-spacing: -0.1rem;
+}
+h2 {
+    font: 2rem 'Twinkle Star', sans-serif;
+    letter-spacing: 0.2rem;
+    font-weight: 1000;
+    padding: 0.5rem;
+}
+p {
+    font: 1rem 'Lexend', sans-serif;
+    line-height: 1.2rem;
+    letter-spacing: 0.05rem;
+    padding: 0.5rem;
+}
+i {
+    font-family: 'Delius Swash Caps';
+}
+
+/* Layout */
+header {
+    padding: 10px 0;
+    text-align: center;
+    height: 15%;
+    width: 100vw;
+    position: absolute;
+    top: 150px;
+}
+.page {
+    height: inherit;
+}
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+main {
+    padding: 1.5rem;
+    position: absolute;
+    bottom: 200px;
+}
+
+/* Main Fade-In Animation */
+main > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Text Effects */
+.text-shadow {
+    text-shadow: black 0px 0px 20px;
+}
+.box-shadow {
+    box-shadow: black 0px 0px 20px;
+}
+
+/* Floating Header Animation */
+.floating-header span {
+    display: inline-block;
+    animation: float 2.5s infinite ease-in-out;
+}
+.floating-header span:nth-child(odd) {
+    animation-delay: 0.1s;
+}
+.floating-header span:nth-child(even) {
+    animation-delay: 0.3s;
+}
+@keyframes float {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Typewriter (uses JS) */
+/* -- No CSS needed for typewriter effect -- */
+
+/* Neon Glow Text */
+.neon-glow {
+    text-shadow:
+        0 0 5px #fff,
+        0 0 10px #ff4f8b,
+        0 0 20px #ff4f8b,
+        0 0 40px #ff4f8b;
+    animation: flicker 2s infinite;
+}
+@keyframes flicker {
+    0%   { opacity: 1; }
+    50%  { opacity: 0.8; }
+    55%  { opacity: 1; }
+    60%  { opacity: 0.5; }
+    65%  { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+/* Button Styling */
+button {
+    width: 300px;
+    height: 75px;
+    border-radius: 38px;
+    background-color: rgba(225, 36, 76, 0.65);
+    border: none;
+    font: 1.25rem 'Lexend', sans-serif;
+    color: white;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    animation: zoom-in-out infinite alternate;
+}
+
+/* Heart Icon Inside Button */
+.heart-icon {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    font-size: 1.25rem;
+}
+
+/* Hover: Outline & Icon Slide */
+button:hover {
+    background-color: transparent;
+    color: rgba(225, 36, 76, 0.85);
+    border: 2.5px solid rgba(225, 36, 76, 0.85);
+    cursor: pointer;
+}
+button:hover .heart-icon {
+    opacity: 1;
+    transform: translateX(0);
+}
+button:hover .btn-text {
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.788);
+}
+
+/* Glow on Click */
+@keyframes glow-pulse {
+    0% {
+        box-shadow: 0 0 0px rgba(225, 36, 76, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(225, 36, 76, 0.8), 0 0 60px rgba(225, 36, 76, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 0px rgba(225, 36, 76, 0.8);
+    }
+}
+button.glow-clicked {
+    animation: glow-pulse 1s ease-out;
+}
+
+/* Optional bounce (for zoom-in-out loop) */
+.zoom-in-out {
+    animation: zoom-in-out 1s infinite alternate;
+}
+@keyframes zoom-in-out {
+    0%   { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+.heart-reveal-button {
+    position: relative;
+    width: 300px;
+    height: 75px;
+    border-radius: 38px;
+    font: 1.25rem 'Lexend', sans-serif;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-left: 20px;
+    gap: 15px;
+    color: white;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+/* HEART SLIDE IN FROM LEFT */
+.heart-overlay {
+    position: absolute;
+    left: -60px;
+    width: 60px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease;
+    z-index: 1;
+}
+.heart-overlay img {
+    width: 45px;
+    height: auto;
+}
+
+/* TEXT INITIAL STATE */
+.heart-reveal-button .btn-text {
+    opacity: 1;
+    transform: translateX(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 2;
+}
+
+/* ON HOVER */
+.heart-reveal-button:hover .heart-overlay {
+    transform: translateX(275px); /* Slides heart fully into view on the left */
+}
+.heart-reveal-button:hover .btn-text {
+    opacity: 1;
+    transform: translateX(0);
+}

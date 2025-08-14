@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I hope you're liking this.</title>
+  <link rel="stylesheet" href="/css/anagrams.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Lexend:wght@100..900&family=Nunito+Sans:ital,opsz,wdth,wght@0,6..12,75..125,200..1000;1,6..12,75..125,200..1000&family=Twinkle+Star&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <div id="bg-video">
+  <iframe 
+    src="https://player.vimeo.com/video/1109931507?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0" 
+    frameborder="0" 
+    allow="autoplay; fullscreen; picture-in-picture" 
+    referrerpolicy="strict-origin-when-cross-origin">
+  </iframe>
+</div>
+    <header>
+      <h1>Anagrams</h1>
+      <p class="desc-text">Welcome to the Anagrams page! Unscramble the words below. Each correct answer unlocks an important hint that you'll need later in the game. 💌</p>
+    </header>
+    
+    <div class="container">
+    <main>
+      <section class="game">
+        <h2 id="challengeTitle">Challenge 1</h2>
+        <p id="challengePrompt">Unscramble the following:</p>
+        <div id="hintBox">U0Y 37V0 !</div>
+        <div class="gradient-input"><input type="text" id="userInput" placeholder="Type your answer here" autocomplete="off" /></div>
+        <button id="submitAnswer">Submit</button>
+        <p id="result"></p>
+      </section>
+    </main>
+  </div>
+
+  <script src="/js/anagrams.js"></script>
+</body>
+</html>
